@@ -2,11 +2,12 @@
 
 AfterClass is a simple website intended to bring commonly used classroom websites and educational resources together in one place.
 
+AfterClass will always be ad-free.
+
 ## Pages
 
 - `index.html` — Home page
 - `about.html` — About AfterClass
-- `subway-surfers.html` — Play Subway Surfers
 
 All pages share `style.css`, which provides the dark theme, navigation banner, and page layout.
 
@@ -18,7 +19,7 @@ All pages share `style.css`, which provides the dark theme, navigation banner, a
 
 ## Keyboard shortcut
 
-Press `0` to open Google. The shortcut is ignored while typing in an editable field.
+Press `0` to open Google, including while typing or interacting with the page.
 
 ## Run locally
 

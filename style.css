@@ -75,3 +75,34 @@ main {
     border-color: #e53935;
     color: white;
 }
+
+main form {
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.game-launch-button {
+    display: block;
+    padding: 0;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.game-launch-button img {
+    display: block;
+    width: 180px;
+    height: auto;
+}
+
+.game-launch-button:hover {
+    transform: scale(1.04);
+}
+
+.game-launch-button:focus-visible {
+    outline: 3px solid #e53935;
+    outline-offset: 3px;
+}
