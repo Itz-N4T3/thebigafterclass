@@ -29,7 +29,7 @@ footer {
 
 header h1 {
     margin: 0;
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
 nav ul {
@@ -57,4 +57,21 @@ nav a:focus-visible {
 main {
     flex: 1;
     text-align: center;
+}
+
+#fullscreen-button {
+    margin-top: 0.5rem;
+    padding: 0.4rem 0.65rem;
+    border: 1px solid #555;
+    border-radius: 3px;
+    background: transparent;
+    color: #ccc;
+    font: inherit;
+    cursor: pointer;
+}
+
+#fullscreen-button:hover,
+#fullscreen-button:focus-visible {
+    border-color: #e53935;
+    color: white;
 }
