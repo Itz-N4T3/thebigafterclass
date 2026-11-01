@@ -89,9 +89,9 @@ main {
 .resource-grid {
     display: grid;
     width: min(calc(100% - 2rem), 408px);
-    aspect-ratio: 408 / 271;
+    aspect-ratio: 408 / 411;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(3, minmax(0, 1fr));
     margin: 0 auto;
     gap: 0.75rem 1rem;
 }
@@ -101,7 +101,7 @@ main {
 }
 
 .resource-grid > form:first-child {
-    grid-row: 1 / span 2;
+    grid-row: 1 / span 3;
 }
 
 .game-launch-button {
