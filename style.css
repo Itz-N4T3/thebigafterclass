@@ -101,7 +101,7 @@ main {
 }
 
 .resource-grid > form:first-child {
-    grid-row: 1 / span 3;
+    grid-row: 1 / span 2;
 }
 
 .game-launch-button {

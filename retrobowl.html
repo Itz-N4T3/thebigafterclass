@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Retro Bowl - AfterClass</title>
+        <meta name="description" content="Play Retro Bowl on AfterClass.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/png" href="favicon.png">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1><a href="index.html">AfterClass</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfHofTblRziRhAiflrGv3iZmDnq6QlPIWAM1GIO4Z38Wzq3aA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">Suggestions</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h1>Retro Bowl</h1>
+            <iframe id="retrobowl-game" src="https://javaspence.github.io/retrobowl/" width="100%" height="540" frameborder="0" allowfullscreen scrolling="no" loading="lazy" title="Retro Bowl"></iframe>
+            <button id="fullscreen-button" type="button">Enter fullscreen</button>
+            <p id="fullscreen-status" role="status" aria-live="polite"></p>
+        </main>
+        <footer>
+            <nav aria-label="Footer">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfHofTblRziRhAiflrGv3iZmDnq6QlPIWAM1GIO4Z38Wzq3aA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">Suggestions</a></li>
+                </ul>
+            </nav>
+            <p>&copy; 2026 AfterClass. All rights reserved. Made with hate for student monitoring in California<br>Press 0 to open Google.</p>
+        </footer>
+        <script>
+            const game = document.getElementById("retrobowl-game");
+            const fullscreenButton = document.getElementById("fullscreen-button");
+            const fullscreenStatus = document.getElementById("fullscreen-status");
+
+            fullscreenButton.addEventListener("click", async () => {
+                fullscreenStatus.textContent = "";
+
+                try {
+                    if (document.fullscreenElement === game) {
+                        await document.exitFullscreen();
+                    } else {
+                        await game.requestFullscreen();
+                    }
+                } catch (error) {
+                    fullscreenStatus.textContent = "Fullscreen is not available in this browser.";
+                }
+            });
+
+            document.addEventListener("fullscreenchange", () => {
+                fullscreenButton.textContent =
+                    document.fullscreenElement === game ? "Exit fullscreen" : "Enter fullscreen";
+            });
+        </script>
+        <script src="script.js"></script>
+    </body>
+</html>
