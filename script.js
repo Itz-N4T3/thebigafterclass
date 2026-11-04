@@ -4,6 +4,27 @@ document.addEventListener("keydown", (event) => {
     }
 });
 
+const themeToggle = document.querySelector(".theme-toggle");
+
+if (themeToggle) {
+    const applyTheme = (theme) => {
+        const isLight = theme === "light";
+        document.documentElement.dataset.theme = isLight ? "light" : "dark";
+        themeToggle.textContent = isLight ? "☾" : "☼";
+        themeToggle.setAttribute("aria-label", `Switch to ${isLight ? "dark" : "light"} mode`);
+        themeToggle.title = `Switch to ${isLight ? "dark" : "light"} mode`;
+        themeToggle.setAttribute("aria-pressed", String(isLight));
+    };
+
+    applyTheme(document.documentElement.dataset.theme);
+
+    themeToggle.addEventListener("click", () => {
+        const nextTheme = document.documentElement.dataset.theme === "light" ? "dark" : "light";
+        applyTheme(nextTheme);
+        localStorage.setItem("afterclass-theme", nextTheme);
+    });
+}
+
 const searchInput = document.querySelector(".site-search input");
 const resourceCards = document.querySelectorAll(".resource-card");
 const searchResults = document.querySelector(".search-results");
