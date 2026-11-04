@@ -28,8 +28,8 @@ if (searchInput && resourceCards.length > 0 && searchResults) {
         searchResults.textContent = query.length === 0
             ? ""
             : visibleCount === 0
-                ? `No games found for "${searchInput.value.trim()}".`
-                : `${visibleCount} ${visibleCount === 1 ? "game" : "games"} found.`;
+                ? `No resources found for "${searchInput.value.trim()}".`
+                : `${visibleCount} ${visibleCount === 1 ? "resource" : "resources"} found.`;
     };
 
     searchInput.addEventListener("input", filterResources);
