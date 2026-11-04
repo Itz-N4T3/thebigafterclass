@@ -8,6 +8,7 @@ AfterClass will always be ad-free.
 
 - `index.html` — Home page
 - `about.html` — About AfterClass
+- `drift-hunters.html` — Drift Hunters game page
 
 All pages share `style.css`, which provides the dark theme, navigation banner, and page layout.
 

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Drift Hunters - AfterClass</title>
+        <meta name="description" content="Play Drift Hunters on AfterClass.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/png" href="favicon.png">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1><a href="index.html">AfterClass</a></h1>
+            <form class="site-search" action="index.html" role="search">
+                <input type="search" name="search" aria-label="Search games" placeholder="Search games..." autocomplete="off">
+                <button type="submit">Search</button>
+            </form>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfHofTblRziRhAiflrGv3iZmDnq6QlPIWAM1GIO4Z38Wzq3aA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">Suggestions</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h1>Drift Hunters</h1>
+            <iframe id="drift-hunters-game" src="https://petezahgames.github.io/so/drifthunters/" width="100%" height="540" frameborder="0" allowfullscreen scrolling="no" loading="lazy" title="Drift Hunters"></iframe>
+            <button id="fullscreen-button" type="button">Enter fullscreen</button>
+            <p id="fullscreen-status" role="status" aria-live="polite"></p>
+        </main>
+        <footer>
+            <nav aria-label="Footer">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfHofTblRziRhAiflrGv3iZmDnq6QlPIWAM1GIO4Z38Wzq3aA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">Suggestions</a></li>
+                </ul>
+            </nav>
+            <p>&copy; 2026 AfterClass. All rights reserved. Made with hate for student monitoring in California<br>Press 0 to open Google.</p>
+        </footer>
+        <script>
+            const game = document.getElementById("drift-hunters-game");
+            const fullscreenButton = document.getElementById("fullscreen-button");
+            const fullscreenStatus = document.getElementById("fullscreen-status");
+
+            fullscreenButton.addEventListener("click", async () => {
+                fullscreenStatus.textContent = "";
+
+                try {
+                    if (document.fullscreenElement === game) {
+                        await document.exitFullscreen();
+                    } else {
+                        await game.requestFullscreen();
+                    }
+                } catch (error) {
+                    fullscreenStatus.textContent = "Fullscreen is not available in this browser.";
+                }
+            });
+
+            document.addEventListener("fullscreenchange", () => {
+                fullscreenButton.textContent =
+                    document.fullscreenElement === game ? "Exit fullscreen" : "Enter fullscreen";
+            });
+        </script>
+        <script src="script.js"></script>
+    </body>
+</html>

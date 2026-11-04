@@ -12,10 +12,12 @@ body {
 header {
     background-color: #1e1e1e;
     border-bottom: 3px solid #e53935;
-    padding: 0 1.5rem;
+    padding: 0.5rem 1.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 footer {
@@ -64,9 +66,51 @@ nav a:focus-visible {
     color: #ff8a80;
 }
 
+.site-search {
+    display: flex;
+    flex: 1 1 15rem;
+    max-width: 24rem;
+}
+
+.site-search input {
+    min-width: 0;
+    flex: 1;
+    padding: 0.65rem 0.75rem;
+    border: 1px solid #555;
+    border-radius: 4px 0 0 4px;
+    background: #121212;
+    color: white;
+    font: inherit;
+}
+
+.site-search input:focus-visible {
+    outline: none;
+    z-index: 1;
+}
+
+.site-search button {
+    padding: 0.65rem 0.9rem;
+    border: 1px solid #e53935;
+    border-radius: 0 4px 4px 0;
+    background: #e53935;
+    color: white;
+    font: inherit;
+    cursor: pointer;
+}
+
+.site-search button:hover,
+.site-search button:focus-visible {
+    background: #c62828;
+}
+
 main {
     flex: 1;
     text-align: center;
+}
+
+.search-results {
+    margin: 0.75rem 1rem;
+    color: #ccc;
 }
 
 #fullscreen-button {
@@ -133,4 +177,47 @@ main {
 .game-launch-button:focus-visible {
     outline: 3px solid #e53935;
     outline-offset: 3px;
+}
+
+@media (max-width: 700px) {
+    header {
+        justify-content: center;
+    }
+
+    .resource-grid {
+        width: min(calc(100% - 1rem), 816px);
+        aspect-ratio: auto;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: none;
+        grid-auto-rows: minmax(7.5rem, 34vw);
+        gap: 0.5rem;
+    }
+
+    footer {
+        box-sizing: border-box;
+        width: 100%;
+        flex-direction: column;
+        padding: 0.5rem 1rem;
+    }
+
+    footer nav ul {
+        justify-content: center;
+        flex-wrap: wrap;
+        column-gap: 1.25rem;
+    }
+
+    footer p {
+        margin: 0.5rem 0;
+        text-align: center;
+    }
+
+    .site-search {
+        order: 1;
+        flex-basis: 100%;
+        max-width: none;
+    }
+
+    header nav {
+        order: 2;
+    }
 }
