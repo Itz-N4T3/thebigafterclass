@@ -158,36 +158,9 @@ main {
     text-align: center;
 }
 
-.page-layout {
-    display: grid;
-    flex: 1;
-    width: 100%;
-    box-sizing: border-box;
-    grid-template-columns: minmax(0, 1fr);
-    align-items: start;
-    padding: 1rem;
-}
-
-.page-layout main {
-    min-width: 0;
-}
-
-.page-layout main iframe {
+main iframe {
     box-sizing: border-box;
     width: 100%;
-    max-width: 100%;
-}
-
-.ad-rail {
-    display: none;
-    min-width: 0;
-    min-height: 600px;
-    overflow: hidden;
-    background-color: var(--page-background);
-}
-
-.ad-rail ins {
-    display: block;
     max-width: 100%;
 }
 
@@ -303,23 +276,7 @@ main {
     }
 }
 
-@media (min-width: 1304px) {
-    .page-layout {
-        grid-template-columns: 300px minmax(0, 1000px) 300px;
-        justify-content: center;
-        gap: 1rem;
-    }
-
-    .ad-rail {
-        display: block;
-    }
-}
-
 @media (max-width: 700px) {
-    .page-layout {
-        padding: 0.5rem;
-    }
-
     header {
         justify-content: center;
     }
