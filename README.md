@@ -2,8 +2,6 @@
 
 AfterClass is a simple website intended to bring commonly used classroom websites and educational resources together in one place.
 
-AfterClass will always be ad-free.
-
 All pages share `style.css`, which provides the dark theme, navigation banner, and page layout.
 
 ## Color theme
